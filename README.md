@@ -1,4 +1,4 @@
-# Ex-11-A-ANTI-THEFT-ALERT-SYSTEM-USING-TILT-SENSOR
+# Ex-8-A-ANTI-THEFT-ALERT-SYSTEM-USING-TILT-SENSOR
 
 ## Theory :
 The Arduino Uno is powered by the ATmega328P, an 8-bit microcontroller that runs at 16 MHz. It has 32 KB of flash memory, 2 KB of SRAM, and 1 KB of EEPROM. The board has 14 digital I/O pins (of which 6 can be used as PWM outputs) and 6 analog input pins. These pins allow the board to interface with various sensors, actuators, and other devices.The Arduino Uno can be powered via a USB connection or an external power supply. The board has a built-in voltage regulator to manage power from 7 to 12 volts.
@@ -50,11 +50,35 @@ The board is programmable using the Arduino IDE (Integrated Development Environm
 •	Stop Simulation: Click "Stop Simulation" to end the simulation.
 
 •	Save the Circuit: Click "Save" to keep your circuit design and code for future use.
+## CIRCUIT DIAGRAM 
+<img width="752" height="434" alt="image" src="https://github.com/user-attachments/assets/bf10bf59-b163-4dc0-af1f-44872ae37c16" />
 
 ## PROGRAM
-## OUTPUT
+```py
+int ledPin=13;
+int inPin=7;
+void setup()
+{
+ Serial.begin(9600);
+  pinMode(ledPin,OUTPUT);
+  pinMode(inPin,INPUT);
+}
+void loop()
+{
+  int val=digitalRead(inPin);
+  if(val==0)
+  {
+    digitalWrite(ledPin,HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin,LOW);
+  }
+}
+```
 
+## OUTPUT
+<img width="753" height="431" alt="image" src="https://github.com/user-attachments/assets/f7cc11af-52df-42b1-9f66-595b61692ec3" />
 
 ## Result: 
 Thus measure the Tilt Sensor using SW200D with Arduino UNO Board/ESP-32 using Tinker CAD has been Verified Successfully.
-
